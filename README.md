@@ -18,4 +18,12 @@ There is a single apple on the board at all times during the game. It appears at
 
 At the beginning of a game, immovable obstacles are placed on the board. If a snake collides with an obstacle, it dies. That's really all there is to it.
 
-Visit https://snake.wits.ai for more info.
+### Scoring
+
+Throughout each game, the longest length achieved by each snake is recorded. Snakes are ranked based on their longest length, with ties broken by kill count. If the number of kills is also equal, then the snake with the higher index takes the win.
+
+As there will be many agents competing, players are organised into divisions, with each division consisting of 4 agents. In the event that the lowest division does not have enough players, it will be populated with built-in agents. All divisions play a single game in parallel, and the agents in each are ranked as above. Players who finish first in their division are promoted to a higher division, whilst players who finish last are relegated to a lower one.
+
+The points table provides a weighted average score of each player over all divisions. So the player who finishes last in the lowest division is assigned a score of 0, while the player who finishes first in the top division is given a score of (total_players - 1). We also provide an approximate Elo rating.
+
+## Visit https://snake.wits.ai for more info.

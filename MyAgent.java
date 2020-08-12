@@ -23,6 +23,10 @@ public class MyAgent extends DevelopmentAgent {
             int nSnakes = Integer.parseInt(temp[0]);
 
             // read in obstacles and do something with them!
+            
+            //Apple Health
+            double appleHeath = 5.0;
+            String applePrev = "0 0";
 
             
             while (true) {
@@ -54,8 +58,17 @@ public class MyAgent extends DevelopmentAgent {
 
                 //System.out.println("log " + j);
 
-                //get apple info
+                //get apple info AND APPLE HEALTH
                 String apple1 = line;
+                if(apple1.equals(applePrev)){
+                    appleHeath = appleHeath - 0.1;
+
+                }
+                else {
+                    applePrev = apple1;
+                    appleHeath = 5.0;
+                }
+                
                 String[] appleCoords = apple1.split(" ");
                 int appleX = Integer.parseInt(appleCoords[0]);
                 int appleY = Integer.parseInt(appleCoords[1]);
@@ -189,8 +202,8 @@ public class MyAgent extends DevelopmentAgent {
                 //System.out.println("log Head X: " + myHead.y + " Head Y: " + myHead.x);
                 //System.out.println("log" + path.get(1));
                 //if (!lifeDescription.equals("alive")) System.out.println("log bruh");
-
-                if (myHead.x == path.get(1).getCol()) {
+                if(appleHeath>0){
+                                    if (myHead.x == path.get(1).getCol()) {
                     //System.out.println("log Y to move to: " + node.getRow());
                     //System.out.println("log Current Y: " + myHead.y);
                     if (myHead.y > path.get(1).getRow()) {
@@ -226,6 +239,9 @@ public class MyAgent extends DevelopmentAgent {
                         else { System.out.println(Direction.EAST); }
                     }
                 }
+                }
+                
+
                 //System.out.println("log Head X: " + myHead.y + " Head Y: " + myHead.x);
                 /*if (appleX > myHead.x){
                     if (mySnake.getDirection() == Direction.WEST){

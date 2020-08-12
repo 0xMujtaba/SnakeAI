@@ -26,4 +26,4 @@ As there will be many agents competing, players are organised into divisions, wi
 
 The points table provides a weighted average score of each player over all divisions. So the player who finishes last in the lowest division is assigned a score of 0, while the player who finishes first in the top division is given a score of (total_players - 1). We also provide an approximate Elo rating.
 
-## Visit https://snake.wits.ai for more info.
+### Visit https://snake.wits.ai for more info.
